@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -5,6 +6,7 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <!-- 상단 버튼 영역 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,16 +29,78 @@
             android:text="새로운 이미지 게시" />
     </LinearLayout>
 
+    <!-- ✅ 다크모드 전환 버튼 -->
+    <Button
+        android:id="@+id/btnThemeToggle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🌙 다크모드 전환"
+        android:layout_marginTop="8dp" />
+
+    <!-- 상태 표시 텍스트 -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="..." />
+        android:text="..."
+        android:textSize="16sp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp" />
 
+    <!-- 정렬 기준 Spinner -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="정렬 기준:"
+            android:layout_gravity="center_vertical"
+            android:textSize="16sp"
+            android:layout_marginRight="8dp" />
+
+        <Spinner
+            android:id="@+id/spinnerSort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/sort_options" />
+    </LinearLayout>
+
+    <!-- 작성자별 필터 Spinner -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="작성자:"
+            android:layout_gravity="center_vertical"
+            android:textSize="16sp"
+            android:layout_marginRight="8dp" />
+
+        <Spinner
+            android:id="@+id/spinnerAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- 즐겨찾기 필터 Spinner -->
+    <Spinner
+        android:id="@+id/spinnerFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/fav_filter_options" />
+
+    <!-- 게시글 목록 RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginTop="16dp" />
-
 </LinearLayout>
