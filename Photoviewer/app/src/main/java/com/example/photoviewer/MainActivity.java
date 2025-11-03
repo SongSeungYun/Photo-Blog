@@ -30,7 +30,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     TextView textView;
-    String site_url = "http://10.0.2.2:8000";
+    String site_url = "https://seungyun.pythonanywhere.com";
     CloadImage taskDownload;
 
     @Override
