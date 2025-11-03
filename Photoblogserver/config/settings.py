@@ -127,6 +127,13 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CORS_ALLOWED_ORIGINS = [
+    "https://yourusername.pythonanywhere.com",
+    "http://localhost:8000",
+    "http://10.0.2.2:8000",   # 개발용
+    "http://10.0.2.2",        # Android 에뮬레이터
+]
+
 CORS_ALLOW_ALL_ORIGINS = True
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
